@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<!-- Custom Theme files -->
+<link href="/static/css/signup_form.css" rel="stylesheet" type="text/css" media="all"/>
+<!--web-fonts-->
+<!--<link href='//fonts.googleapis.com/css?family=Jura:400,300,500,600' rel='stylesheet' type='text/css'>-->
+<div class="main" style="width:80%;">
+    <div class="agile">
+        <div class="signin-form profile">
+            <h1 style="color:black; font-family: sans-serif;">UPDATE PROFILE</h1><br>
+            <p style="font-size:20px;"> You Can Update Your Email and Password:</p>
+            <div class="login-form">
+                <form action="/update/" method="post">
+                    {% csrf_token %}
+                    <input type="email" id="email" name="email" placeholder="Email" required="">
+                    <input type="password" id="password" name="password" placeholder="Password" minlength="8"
+                           required="">
+                    <p id="pwd_error" style="color:Red; font-family:serif;"></p>
+                    <input type="submit" value="UPDATE">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="footer">
+    <div class="contain">
+        <div class="col">
+            <h1>info@allergywell.co.nz</h1>
+        </div>
+        <div class="col">
+            <h1>© 2018 by Allergy Well Ltd</h1>
+        </div>
+        <div class="col social">
+            <ul>
+                <li>
+                    <a id="facebook" href="https://www.facebook.com/allergywellNZ/">
+                        <img src="https://static.wixstatic.com/media/23fd2a2be53141ed810f4d3dcdcd01fa.png/v1/fill/w_31,h_31,al_c,q_80,usm_0.66_1.00_0.01/23fd2a2be53141ed810f4d3dcdcd01fa.webp">
+                    </a>
+                    <a id="linkedin" href="https://www.linkedin.com/in/lisa-hassan-15b611a0/">
+                        <img src="https://static.wixstatic.com/media/7528824071724d12a3e6c31eee0b40d4.png/v1/fill/w_31,h_31,al_c,q_80,usm_0.66_1.00_0.01/7528824071724d12a3e6c31eee0b40d4.webp">
+                    </a>
+                    <a id="twitter" href="https://twitter.com/AllergyWell">
+                        <img src="https://static.wixstatic.com/media/01ab6619093f45388d66736ec22e5885.png/v1/fill/w_31,h_31,al_c,q_80,usm_0.66_1.00_0.01/01ab6619093f45388d66736ec22e5885.webp">
+                    </a>
+                    <a id="instagram" href="https://www.instagram.com/allergywellnz/">
+                        <img src="https://static.wixstatic.com/media/81af6121f84c41a5b4391d7d37fce12a.png/v1/fill/w_31,h_31,al_c,q_80,usm_0.66_1.00_0.01/81af6121f84c41a5b4391d7d37fce12a.webp">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+{% endblock %}
